@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <div id="main">
+
+  </div>
+<!--*******************************!-->
+  <script type="text/babel">
+
+  class Footer extends React.Component{
+    render(){
+      return <div className="container-fluid footer">
+                <div className="footer_info">
+                  <p><b>Mobile: </b>+38(067)176-60-04</p>
+                  <p><b>E-mail: </b>vlados10001000@gmail.com</p>
+                  <p><b>Skype: </b>vlad_10001</p>
+                </div>
+                <img className="footer_img" src="https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Html-512.png"/>
+            </div>
+    }
+  }
+  class Contact extends React.Component{
+    send(){
+      var name = document.getElementById('name').value;
+      var mail = document.getElementById('mail').value;
+      var message = document.getElementById('message').value;
+      console.log("Your name: " + name + "\n" +
+                  "Your mail: " + mail + "\n" +
+                  "Your Message: " + message + "\n")
+    }
+    render(){
+      return <div className="container-fluid">
+                <p className="title_about">Contact</p>
+                <div className="col-md-4 col-sm-4 contact_info">
+                  <b>Phone number:</b><br/>
+                  <span className="dop_info">+38(067)176-60-04</span><br/>
+                  <b>E-mail:</b><br/>
+                  <span className="dop_info">vlados10001000@gmail.com</span><br/>
+                  <b>Skype:</b><br/>
+                  <span className="dop_info">vlad_10001</span>
+                </div>
+                <div className="col-md-4 col-sm-4 contact_form">
+                   <input type="text" placeholder="Name" id="name"/><br/>
+                   <input type="text" placeholder="E-mail"id="mail"/><br/>
+                  <textarea placeholder="Send a message" id="message"></textarea><br/>
+                  <button id="button" onClick={this.send.bind(this)}>SEND</button>
+                </div>
+
+            </div>
+    }
+  }
+  class Score extends React.Component{
+    render(){
+      switch (this.props.key){
+        case 0: return ("8");
+        case 1: return("5");
+        case 2: return("10");
+        case 3: return("8");
+        case 4: return("8");
+      }
+    }
+  }
+  class Skills extends React.Component{
+    render(){
+      let skillsArr = ["HTML5", "CSS3", "Javascript", "ReactJS", "AngularJS"];
+      return <div className="skills container-fluid">
+              <p className="title_about">Skills</p>
+              <div className="col-md-5 col-sm-5" id="skillnames">
+                {skillsArr.map(function(value,index,list){
+                  return <div key={index}
+                              name={value}
+                              level={<Score key={index}/>} >
+                          {value}<br/>
+                        </div>
+                })}
+              </div>
+
+              <div className="col-md-4 col-sm-4 levels">
+                <img src="img/html.png"/><br/>
+                <img src="img/css.png"/><br/>
+                <img src="img/js.png"/><br/>
+                <img src="img/react.png"/><br/>
+                <img src="img/angular.png"/>
+              </div>
+
+            </div>
+    }
+  }
+  class About extends React.Component{
+    render(){
+      return <div className="info container-fluid">
+                <p className="title_about"> About </p>
+                <div className="col-md-4 col-sm-4 col-xs-12 left_info">
+                  <p>
+                    Lorem Ipsum - это текст-"рыба",
+                    часто используемый в печати и вэб-дизайне.
+                    Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века. В то время некий
+                    безымянный печатник создал большую коллекцию размеров и форм
+                    шрифтов, используя Lorem Ipsum для распечатки образцов.
+                    Lorem Ipsum - это текст-"рыба",
+                    часто используемый в печати и вэб-дизайне.
+                  </p>
+                </div>
+                <div className="col-md-4 col-sm-4 col-xs-12 user_icon">
+                  <img src="icon/user.png"/>
+                </div>
+                <div className="col-md-4 col-sm-4 col-xs-12 right_info">
+                  <p>
+                    Lorem Ipsum - это текст-"рыба",
+                    часто используемый в печати и вэб-дизайне.
+                    Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века. В то время некий
+                    безымянный печатник создал большую коллекцию размеров и форм
+                    шрифтов, используя Lorem Ipsum для распечатки образцов.
+                    Lorem Ipsum - это текст-"рыба",
+                    часто используемый в печати и вэб-дизайне.
+                  </p>
+                </div>
+            </div>
+    }
+  }
+  class Title extends React.Component{
+    render(){
+      return <div className="title">
+                <p className="name"> Vlad Tysiachnyi</p>
+                <p className="profesion"> Front-end Developer</p>
+            </div>
+    }
+  }
+  class Icon extends React.Component{
+    render(){
+      return <div className="icon"></div>
+    }
+  }
+  class Menu extends React.Component{
+    render(){
+      let menu_items = ["Home","About", "Skills", "Contact"];
+      return <ul>
+                {menu_items.map(function(value, index, list){
+                  return <li key={index} id={value}><Link label={value}></Link></li>
+                })}
+            </ul>
+    }
+  }
+  class Link extends React.Component{
+    render(){
+      const url = "*" ;
+      return <a href={url}>{this.props.label}</a>
+    }
+  }
+  ReactDOM.render(
+    <div className="main_block container-fluid">
+      <div className="header">
+        <Icon />
+        <Menu />
+        <Title />
+      </div>
+      <About />
+      <hr/>
+      <Skills />
+      <hr/>
+      <Contact />
+      <Footer />
+    </div>,
+    document.getElementById('main')
+
+  );
+
+
+  </script>
+
+</body>
+</html>
