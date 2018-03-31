@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+  <title>Document</title>
+</head>
+<body>
+
+<div id="a"></div>
+
+
+    <script src="react/react.js"></script>
+    <script src="react/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script type="text/babel">
+      var Contacts = [
+        {
+          id: 1,
+          name: "VLad",
+          surname: "Tysiachnyi",
+          phone: "+3806312345",
+          photo: "https://cdn.cnn.com/cnnnext/dam/assets/161201115958-68-year-in-pictures-2016-restricted-super-169.jpg"
+        },
+        {
+          id: 2,
+          name: "Dima",
+          surname: "Porokhovnik",
+          phone: "+380672357",
+          photo: "https://cdn.cnn.com/cnnnext/dam/assets/161201115958-68-year-in-pictures-2016-restricted-super-169.jpg"
+        },
+        {
+          id:3,
+          name: "Sasha",
+          surname: "Bondarenko",
+          phone: "+3809835677",
+          photo: "https://cdn.cnn.com/cnnnext/dam/assets/161201115958-68-year-in-pictures-2016-restricted-super-169.jpg"
+        },
+        {
+          id: 4,
+          name: "Ismail",
+          surname: "Abiev",
+          phone: "+389645654",
+          photo: "https://cdn.cnn.com/cnnnext/dam/assets/161201115958-68-year-in-pictures-2016-restricted-super-169.jpg"
+        },
+        {
+          id: 5,
+          name: "Dart",
+          surname: "Veider",
+          phone: "+3809578764",
+          photo: "https://cdn.cnn.com/cnnnext/dam/assets/161201115958-68-year-in-pictures-2016-restricted-super-169.jpg"
+        }
+      ]        //Array of Contacts
+      ////////////////////////////////////
+      var Contact = React.createClass({
+        render: function(){
+          return(
+            <li className="Contact">
+                <img src={this.props.photo} className="photo"/>
+                <div className="contact_name">{this.props.name}</div>
+                <div className="contact_surname">{this.props.surname}</div><br/>
+                <div className="contact_phone">{this.props.phone}</div>
+            </li>
+          )
+        }
+      });
+      //////////////////////////////////////
+      var AddContact = React.createClass({
+        render: function(){
+          <p>hello</p>
+        }
+      });
+      //////////////////////////////////////
+      var Buttons = React.createClass({
+        addContact: function(){
+          alert("Contact was added");
+        },
+        deleteContact: function(){
+          alert("Contact was deleted");
+        },
+        render: function(){
+          return (
+            <div className="buttons">
+              <input type="button" className="add" value="Add" onClick={this.addContact} />
+              <input type="button" className="delete" value="Delete" onClick={this.deleteContact} />
+            </div>
+          )
+        }
+      });
+      //////////////////////////////////////
+      var ContactList = React.createClass({
+        getInitialState:function(){
+          return {displayedContacts: Contacts};
+        },
+        handleSearch:function(event){
+          var searchQuery = event.target.value.toLowerCase();
+          var displayedContacts = Contacts.filter(function(elem){
+            var searchValue = elem.name.toLowerCase();
+            return searchValue.indexOf(searchQuery) != -1;
+          });
+          this.setState({displayedContacts: displayedContacts});
+        },
+        render: function(){
+          return(
+            <div className="ContactList">
+              <input type="text" className="search" placeholder="Search" onChange={this.handleSearch}/>
+              <ul>
+                {this.state.displayedContacts.map(function(elem){
+                  return <Contact  key={elem.id}
+                                  name={elem.name}
+                                  surname={elem.surname}
+                                  phone={elem.phone}
+                                  photo={elem.photo}
+                                  />
+                })
+              }
+              </ul>
+              <Buttons />
+            </div>
+          )
+        }
+      });
+      //////////////////////////////////////
+
+      ReactDOM.render(<ContactList />, document.getElementById("a"));
+    </script>
+</body>
+</html>
