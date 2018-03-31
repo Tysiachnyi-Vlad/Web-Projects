@@ -1,0 +1,200 @@
+:root{
+  --line_color: #00c1f6;
+  --bonus_code: #d6d6d6;
+  --left_margin: -55px;
+}
+html,body{
+  margin-left: -1%;
+  margin-right: -1%;
+ background-image: url('../img/background.png');
+
+}
+.main_block{
+  height: 790px;
+}
+.text_block{
+  height: 790px;
+  background-image: url('../img/Depositphotos.png');
+  background-position: -410px 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.get{
+  color: white;
+  font-family: Roboto;
+  font-size: 30px;
+  margin-top: 40px;
+}
+.dollar{
+  color: #00c1f6;
+  font-family: Roboto;
+  font-size: 140px;
+  font-weight: bold;
+  margin-top: -70px;
+  margin-left: var(--left_margin);
+  display: inline-block;
+}
+.free_chip{
+  display: inline-block;
+  color: var(--bonus_code);
+  font-size: 40px;
+  margin-top: -70px;
+  font-weight: bold;
+  -webkit-animation: pulsate 3s linear infinite;
+  animation: pulsate 3s linear infinite;
+}
+.use_bonus_code{
+  border: 1px solid var(--line_color);
+  font-size: 20px;
+  font-family: Roboto;
+  width: 330px;
+  text-align: center;
+  height: auto;
+  margin-left: var(--left_margin);
+}
+#plus{
+  margin-top: 0px;
+  margin-left: var(--left_margin);
+  font-size: 37px;
+
+}
+.one_h_p{
+  display:inline-block;
+  margin-top: -30px;
+  margin-left: var(--left_margin);
+  font-size: 85px;
+  font-weight: bold;
+  color: var(--line_color);
+}
+.up_to{
+  margin-top: -30px;
+  width: 50px;
+  display:inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--bonus_code);
+}
+.five_t{
+  margin-top: -30px;
+  display:inline-block;
+  font-size: 85px;
+  font-weight: bold;
+  color: var(--line_color);
+}
+.play {
+  margin-top: 30px;
+  margin-left: var(--left_margin);
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--line_color);
+  text-shadow: 0 -1px rgba(0,0,0,.1);
+  text-decoration: none;
+  user-select: none;
+  padding: .3em 1em;
+  outline: none;
+  border: 1px solid var(--line_color);
+  border-radius: 3px;
+  background: black;
+  -webkit-animation: pulsate 1.2s linear infinite;
+  animation: pulsate 1.2s linear infinite;
+}
+.play:hover {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  cursor: pointer;
+}
+.play:active {
+  top: 1px;
+  color: #fff;
+  text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
+  box-shadow: 0 -1px 3px rgba(0,0,0,.3), 0 1px 1px #fff, inset 0 1px 2px rgba(0,0,0,.8), inset 0 -1px 0 rgba(0,0,0,.05);
+}
+.steps{
+  list-style: none;
+  margin-left: -90px;
+  margin-top: 80px;
+}
+.steps li{
+  width: 140px;
+  height: 140px;
+  margin-right: 20px;
+  text-align: center;
+  padding-top: 7px;
+  font-size: 15px;
+  display: inline-block;
+  color: var(--bonus_code);
+  border: 2px solid var(--line_color);
+  border-radius: 70px;
+  transition: 0.25s linear;
+}
+.steps li:hover{
+  background-color: darkblue;
+}
+.steps li p{
+  width: 70px;
+  margin-left: 35px;
+  color: var(--line_color);
+  font-size: 30px;
+  border-bottom: 2px solid var(--line_color);
+}
+.use_bonus{
+  color: var(--line_color);
+}
+.bonus_code{
+  color: var(--bonus_code);
+}
+.img_block{
+  background-image:url('../img/Background-Plate.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.gradient{
+  width: 570px;
+  height: 790px;
+  float: left;
+  background:-webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.22) 42%,rgba(0,0,0,0.22) 52%,rgba(0,0,0,0.76) 64%,rgba(0,0,0,0.76) 86%);
+}
+.logo{
+  width: auto;
+  height: auto;
+  position: absolute;
+  margin-top: 470px;
+  float: right;
+}
+.montser{
+  float: right;
+}
+.payments{
+  margin-top: 5px;
+  float: right;
+  list-style: none;
+}
+.payments li{
+  display: inline-block;
+  margin-right: 20px;
+}
+.payments li:hover{
+  cursor: pointer;
+}
+.payment_img{
+  width: 57px;
+  height: auto;
+}
+footer{
+  background-color: black;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  border-top: 1.5px solid var(--line_color);
+  margin-left: 0px;
+}
+-webkit-keyframes pulsate {
+  50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
+}
+@keyframes pulsate {
+  50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
+}
