@@ -1,0 +1,22 @@
+
+#timer{
+  text-align: center;
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+  background-color: lightgrey;
+  margin-left: 45%;
+  margin-top: 10%;
+}
+.start{
+  margin-top: 40px;
+  background-color: green;
+  color:white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+#stop{
+  margin-top: 10px;
+  background-color: red;
+}
