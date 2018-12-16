@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "name": "Vlad",
+            "lastName": "Tysia",
+            "phone": "+380234567",
+            "age": 19
+        },
+        {
+            "name": "Perl",
+            "lastName": "Asdf",
+            "phone": "+38023567",
+            "age": 34
+        }
+    ]
+}
