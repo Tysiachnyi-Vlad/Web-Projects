@@ -1,0 +1,38 @@
+body{
+  padding-top: 60px;
+}
+.App {
+  width: 70%;
+  height: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgb(228, 228, 228);
+}
+.styleButtons{
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+}
+input{
+  height: 30px;
+  background-color: #000;
+  color: #ffffff;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 10px;
+  
+}
+.textAreaBlock{
+  width: 50%;
+  height: 200px;
+  margin: 0 auto;
+}
+.textAreaBlock textarea{
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+
