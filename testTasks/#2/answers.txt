@@ -1,0 +1,13 @@
+1) new adds to function __proto__ and some other elements
+
+2) + callbacks: easy to understand (I guess that's it=) )
+   + promise: less code, cleaner, try catch contruction.
+
+3) null - it's nothing, but type of null is {},
+    when we declared variable but didn't set the value, it's - undefined,
+    when we write a=5, but a wasn't declared, we will get - undeclard;
+
+4) console.error, alert(), debugger.
+
+5) same-origin policy: for example we have 2 windows fb.com and gmail.com. 
+We don't want that fb.com could read our mails in Gmail, that is the same-origin policy.
